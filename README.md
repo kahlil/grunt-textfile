@@ -1,6 +1,6 @@
 # grunt-textfile
 
-> A grunt task to create text files for text-based CMS sand static file generators.
+> A grunt task to create text files for text-based CMS and static file generators.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
