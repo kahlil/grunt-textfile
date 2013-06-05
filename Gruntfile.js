@@ -30,6 +30,7 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     textfile: {
+      author: 'kahlil-lechelt',
       default_options: {
         options: {
         },

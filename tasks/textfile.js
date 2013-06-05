@@ -13,12 +13,23 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('textfile', 'Your task description goes here.', function() {
+  var textfile = require('./lib/textfile').init(grunt);
+  var _s       = require('underscore.string');
+
+  grunt.registerMultiTask('textfile', 'Create a new post for your textfile based blogging software.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       punctuation: '.',
       separator: ', '
     });
+
+    var template = grunt.file.read('./templates/kirby-linkpost.tpl');
+    var tplopt   = {
+        title: grunt.option('title'),
+        link: grunt.option('link')
+    };
+    var result   = grunt.template.process(template, {data: tplopt});
+    console.log(result);
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
