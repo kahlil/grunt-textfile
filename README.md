@@ -1,6 +1,6 @@
 # grunt-textfile
 
-> A grunt task to create text files for text-based CMS and static file generators.
+> A grunt task to quickly create text files for text-based blogging.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -122,7 +122,7 @@ grunt.initConfig({
 
 Template: 
 
-```txt
+```
 Title: <%= grunt.option('title') %>
 ----
 Link: <%= grunt.option('link') %>
@@ -134,7 +134,7 @@ Author: kahlil-lechelt
 Text:
 ```
 
-Create the file by calling
+Create the file by calling:
 ```bash
 grunt textfile --link="http://thisisalink.net" --title="This is a title"
 ``` 
@@ -168,7 +168,7 @@ Author: kahlil-lechelt
 ---
 ```
 
-Create the file by calling
+Create the file by calling:
 ```bash
 grunt textfile --title="This is a title"
 ``` 
