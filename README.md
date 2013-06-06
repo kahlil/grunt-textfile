@@ -176,6 +176,8 @@ grunt textfile --title="This is a title"
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
+To run the tests clone this repo, do `npm install` and then `grunt`.
+
 ## Release History
 Only releases with bigger changes will be listed here. Not listed are minor releases only containing small fixes and clean up.
 ```
