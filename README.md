@@ -1,6 +1,6 @@
 # grunt-textfile
 
-> A grunt task to quickly create text files for text-based blogging.
+> A grunt task to quickly create text files for text file based blogging.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
