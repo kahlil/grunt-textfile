@@ -59,8 +59,6 @@ module.exports = function(grunt) {
         grunt.util.spawn({
             cmd: options.openWith,
             args: [fullPath]
-        }, function() {
-            grunt.log.writeln('Opened file with' + options.openWith);
         });
     }
 
