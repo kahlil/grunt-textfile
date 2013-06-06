@@ -134,7 +134,7 @@ Author: kahlil-lechelt
 Text:
 ```
 
-##### Call
+##### Call:
 ```bash
 grunt textfile --link="http://thisisalink.net" --title="This is a title"
 ``` 
@@ -168,7 +168,7 @@ Author: kahlil-lechelt
 ---
 ```
 
-##### Call
+##### Call:
 ```bash
 grunt textfile --title="This is a title"
 ``` 
