@@ -27,6 +27,7 @@ grunt.initConfig({
   textfile: {
     options: {
       dest: 'content/blog',
+      openFile: true
     },
     linkpost: {
       options: {
@@ -99,6 +100,16 @@ This option lets you set the desired formatting of the filename. There are 3 key
 'DATE'
 ```
 
+#### options.openFile
+Specify if you want the generated file to opened in an editor.
+Type: `Boolean`  
+Default Value: 'false'
+
+#### options.openWith
+Specify which editor you want the generated file to be opened with.
+Type: `String`  
+Default Value: 'subl'
+
 ### Usage Examples
 
 #### Kirby Link Post
@@ -108,7 +119,8 @@ This option lets you set the desired formatting of the filename. There are 3 key
 grunt.initConfig({
   textfile: {
     options: {
-      dest: 'content/blog'
+      dest: 'content/blog',
+      openFile: true
     },
     linkpost: {
       options: {
@@ -146,7 +158,8 @@ grunt textfile --link="http://thisisalink.net" --title="This is a title"
 grunt.initConfig({
   textfile: {
     options: {
-      dest: '_posts'
+      dest: '_posts',
+      openFile: true
     },
     article: {
       options: {
