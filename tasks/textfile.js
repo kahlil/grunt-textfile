@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       template = grunt.file.read(filePath);
     }
 
-    // Process the the template file.
+    // Process the template file.
     var result   = grunt.util.normalizelf(grunt.template.process(template));
     var fullPath = options.dest + '/' + filename;
     grunt.file.write(fullPath, result);
