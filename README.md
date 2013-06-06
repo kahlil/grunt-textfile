@@ -46,11 +46,11 @@ grunt.initConfig({
 
 #### Templates
 
-Store your templates in the templates folder and use the `[grunt.template](http://gruntjs.com/api/grunt.template)` and the `[grunt.option](http://gruntjs.com/api/grunt.option)` API for placeholders.
+Store your templates in the templates folder and use the [`grunt.template`](http://gruntjs.com/api/grunt.template)` and the [`grunt.option`](http://gruntjs.com/api/grunt.option)` API for placeholders.
 
 Example template: 
 
-```txt
+```
 Title: <%= grunt.option('title') %>
 ----
 Link: <%= grunt.option('link') %>
