@@ -181,5 +181,6 @@ To run the tests clone this repo, do `npm install` and then `grunt`.
 ## Release History
 Only releases with bigger changes will be listed here. Not listed are minor releases only containing small fixes and clean up.
 ```
-v0.1.0: initial release
+v0.1.7: add 'openFile' and 'openFile' options to open the generated file in an editor.
+v0.1.0: initial release.
 ```

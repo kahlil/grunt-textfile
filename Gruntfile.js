@@ -33,6 +33,7 @@ module.exports = function(grunt) {
       options: {
         // The path to the folder containing the articles
         dest: 'tmp',
+        openFile: true
       },
       linkpost: {
         options: {

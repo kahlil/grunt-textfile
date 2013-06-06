@@ -60,7 +60,7 @@ exports.textfile = {
 
     grunt.util.spawn({
       grunt: true,
-      args: ['textfile:linkpost', '--link="http://thisisthelink.com"', '--title="This is the title"']
+      args: ['textfile:linkpost', '--link=http://thisisthelink.com', '--title=This is the title']
     }, function() {
       actual   = grunt.file.read('tmp/1-this-is-the-title/article.link.txt');
       expected = grunt.file.read('test/expected/article.link.txt');
