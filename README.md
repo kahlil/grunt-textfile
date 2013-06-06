@@ -141,7 +141,7 @@ grunt textfile --link="http://thisisalink.net" --title="This is a title"
 
 #### Jekyll Post
 
-Gruntfile: 
+##### Gruntfile: 
 ```js
 grunt.initConfig({
   textfile: {
@@ -158,7 +158,7 @@ grunt.initConfig({
 })
 ```
 
-Template: 
+##### Template: 
 
 ```Handlebars
 ---
