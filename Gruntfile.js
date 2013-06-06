@@ -38,19 +38,6 @@ module.exports = function(grunt) {
         options: {
             // The name of the template
             template: 'kirby-linkpost.tpl',
-            // Create the desired URIs. Kirby needs something like
-            // 045-this-is-the-slug/article.txt
-            // where the number in the beginning signifies the
-            // order of the articles.
-            // In Jekyll the format could look like this:
-            // 2013-06-05-this-is-the-slug.md.
-            // The urlFormat option for that case would look like this:
-            // urlFormat: 'DATE-SLUG.md'
-            // We have 3 key words at our disposal: PREFIX, DATE and SLUG.
-            // PREFIX prepends an ascending number at the beginning of the dir name.
-            // If you use DATE the format 'yyyy-mm-dd' is used by default,
-            // you can customize that with the option
-            // urlDateFormat: 'yyyy-mm'
             urlFormat: 'PREFIX-SLUG/article.link.txt'
         }
       },
