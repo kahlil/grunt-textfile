@@ -1,0 +1,10 @@
+Title: "This is the title"
+----
+Link: "http://thisisthelink.com"
+----
+Date: 2013-06-06
+----
+Author: kahlil-lechelt
+----
+Text:
+

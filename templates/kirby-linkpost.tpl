@@ -1,10 +1,10 @@
-Title: <%= title %>
+Title: <%= grunt.option('title') %>
 ----
-Link: <%= link %>
+Link: <%= grunt.option('link') %>
 ----
 Date: <%= grunt.template.today('yyyy-mm-dd') %>
 ----
-Author: <%= textfile.author %>
+Author: kahlil-lechelt
 ----
 Text:
 

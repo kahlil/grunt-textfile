@@ -26,20 +26,60 @@ In your project's Gruntfile, add a section named `textfile` to the data object p
 grunt.initConfig({
   textfile: {
     options: {
-      // Task-specific options go here.
+      // The path to the folder containing the articles
+      dest: 'tmp',
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
+    linkpost: {
+      options: {
+        // The name of the template
+        template: 'kirby-linkpost.tpl',
+        // Create the desired URIs. Kirby needs something like
+        // 045-this-is-the-slug/article.txt
+        // where the number in the beginning signifies the
+        // order of the articles.
+        // In Jekyll the format could look like this:
+        // 2013-06-05-this-is-the-slug.md.
+        // The urlFormat option for that case would look like this:
+        // urlFormat: 'DATE-SLUG.md'
+        // We have 3 key words at our disposal: PREFIX, DATE and SLUG.
+        // PREFIX prepends an ascending number at the beginning of the dir name.
+        // If you use DATE the format 'yyyy-mm-dd' is used by default,
+        // you can customize that with the option
+        // urlDateFormat: 'yyyy-mm'
+        urlFormat: 'PREFIX-SLUG/article.link.txt'
+      }
     },
-  },
+    article: {
+      options: {
+          template: 'kirby-article.tpl',
+          urlFormat: 'PREFIX-SLUG/article.txt'
+      }
+    }
+  }
 })
 ```
 
 ### Options
 
-#### options.separator
+#### options.template
 Type: `String`
-Default value: `',  '`
+Default value: `'example.tpl'`
+
+#### options.templateDir
+Type: `String`
+Default value: `'templates'`
+
+#### options.templateDir
+Destination for the generated file. Needs to be set to the folder in which your text files are stored.
+
+Type: `String`
+Default value: `'tmp'`
+
+
+// URL format for the DATE keyword in urlFormat.
+urlDateFormat: 'yyyy-mm-dd',
+// The template for the filename or directory name of the file.
+urlFormat: 'PREFIX-SLUG/article.link.txt',
 
 A string value that is used to do something with whatever.
 

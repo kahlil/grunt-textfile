@@ -14,48 +14,42 @@ module.exports = function(grunt) {
   // creation: http://gruntjs.com/creating-tasks
 
   var textfile = require('./lib/textfile').init(grunt);
-  var _s       = require('underscore.string');
 
   grunt.registerMultiTask('textfile', 'Create a new post for your textfile based blogging software.', function() {
+    var options, template, filename;
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
+    options = this.options({
+      // Name of the default template.
+      template: 'example.tpl',
+      // Directory containing the templates.
+      templateDir: 'templates',
+      // Destination for the generated file.
+      dest: 'tmp',
+      // URL format for the DATE keyword in urlFormat.
+      urlDateFormat: 'yyyy-mm-dd',
+      // The template for the filename or directory name of the file.
+      urlFormat: 'PREFIX-SLUG/article.link.txt',
     });
 
-    var template = grunt.file.read('./templates/kirby-linkpost.tpl');
-    var tplopt   = {
-        title: grunt.option('title'),
-        link: grunt.option('link')
-    };
-    var result   = grunt.template.process(template, {data: tplopt});
-    console.log(result);
+    // Process the urlFormat option. Replaces the keywords
+    // PREFIX, SLUG and DATE in options.urlFormat.
+    filename = textfile.processUrlFormat(options);
 
-    // Iterate over all specified file groups.
-    this.files.forEach(function(f) {
-      // Concat specified files.
-      var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      }).map(function(filepath) {
-        // Read file source.
-        return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+    // Get the template name from the task options.
+    // Check if the file exists.
+    var filePath = './' + options.templateDir + '/' + options.template;
+    if (!grunt.file.exists(filePath)) {
+      grunt.log.warn('Template file "' + filePath + '" not found.');
+      return false;
+    } else {
+      template = grunt.file.read(filePath);
+    }
 
-      // Handle options.
-      src += options.punctuation;
-
-      // Write the destination file.
-      grunt.file.write(f.dest, src);
-
-      // Print a success message.
-      grunt.log.writeln('File "' + f.dest + '" created.');
-    });
+    // Process the the template file.
+    var result   = grunt.util.normalizelf(grunt.template.process(template));
+    var fullPath = options.dest + '/' + filename;
+    grunt.file.write(fullPath, result);
+    grunt.log.writeln('File "' + fullPath  + '" created.');
   });
 
 };
