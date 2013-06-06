@@ -1,7 +1,7 @@
 {
   "name": "grunt-textfile",
-  "description": "A grunt task to create text files for text-based CMS sand static file generators.",
-  "version": "0.1.3",
+  "description": "A grunt task to create text files for text file based blogging.",
+  "version": "0.1.5",
   "homepage": "https://github.com/kahlil/grunt-textfile",
   "author": {
     "name": "Kahlil Lechelt",
