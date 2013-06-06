@@ -177,8 +177,7 @@ grunt textfile --title="This is a title"
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+Only releases with bigger changes will be listed here. Not listed are minor releases only containing small fixes and clean up.
 ```
-v0.1.2: minor changes
-v0.1.1: minor changes
 v0.1.0: initial release
 ```
