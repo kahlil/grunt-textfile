@@ -103,7 +103,7 @@ This option lets you set the desired formatting of the filename. There are 3 key
 
 #### Kirby Link Post
 
-Gruntfile: 
+##### Gruntfile: 
 ```js
 grunt.initConfig({
   textfile: {
@@ -120,7 +120,7 @@ grunt.initConfig({
 })
 ```
 
-Template: 
+##### Template: 
 
 ```
 Title: <%= grunt.option('title') %>
@@ -134,7 +134,7 @@ Author: kahlil-lechelt
 Text:
 ```
 
-Create the file by calling:
+##### Call
 ```bash
 grunt textfile --link="http://thisisalink.net" --title="This is a title"
 ``` 
@@ -168,7 +168,7 @@ Author: kahlil-lechelt
 ---
 ```
 
-Create the file by calling:
+##### Call
 ```bash
 grunt textfile --title="This is a title"
 ``` 
