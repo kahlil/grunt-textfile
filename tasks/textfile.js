@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
   var textfile = require('./lib/textfile').init(grunt);
 
-  grunt.registerMultiTask('textfile', 'Create a new post for your textfile based blogging software.', function() {
+  grunt.registerMultiTask('textfile', 'Create a new post for your text file based blogging software.', function() {
     var options, template, filename;
     // Merge task-specific and/or target-specific options with these defaults.
     options = this.options({
