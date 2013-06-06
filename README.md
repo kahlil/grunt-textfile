@@ -178,5 +178,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 ```
+v0.1.2: minor changes
+v0.1.1: minor changes
 v0.1.0: initial release
 ```

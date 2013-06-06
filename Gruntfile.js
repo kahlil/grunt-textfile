@@ -37,7 +37,6 @@ module.exports = function(grunt) {
       linkpost: {
         options: {
             // The name of the template
-            template: 'kirby-linkpost.tpl',
             urlFormat: 'PREFIX-SLUG/article.link.txt'
         }
       },
