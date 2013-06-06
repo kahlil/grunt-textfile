@@ -44,6 +44,24 @@ grunt.initConfig({
 })
 ```
 
+#### Templates
+
+Store your templates in the templates folder and use the `[grunt.template](http://gruntjs.com/api/grunt.template)` and the `[grunt.option](http://gruntjs.com/api/grunt.option)` API for placeholders.
+
+Example template: 
+
+```txt
+Title: <%= grunt.option('title') %>
+----
+Link: <%= grunt.option('link') %>
+----
+Date: <%= grunt.template.today('yyyy-mm-dd') %>
+----
+Author: Jean-Luc Picard
+----
+Text:
+``` 
+
 ### Options
 
 #### options.template
@@ -71,7 +89,7 @@ Default Value: 'PREFIX-SLUG/article.link.txt'
 This option lets you set the desired formatting of the filename. There are 3 keywords you can use in here: 
 
 ```
-// Needed for Kirby blogs. It prepends an ascending number to the folder name 
+// PREFIX is needed for Kirby blogs. It prepends an ascending number to the folder name 
 // of the folder containing your textfile
 'PREFIX' 
 // This keyword is replaced by the slug generated with the title
@@ -83,36 +101,77 @@ This option lets you set the desired formatting of the filename. There are 3 key
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+#### Kirby Link Post
 
-```js
-grunt.initConfig({
-  textfile: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
+Gruntfile: 
 ```js
 grunt.initConfig({
   textfile: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      dest: 'content/blog'
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    linkpost: {
+      options: {
+        template: 'kirby-linkpost.tpl',
+        urlFormat: 'PREFIX-SLUG/article.link.txt'
+      }
+    }
   },
 })
 ```
+
+Template: 
+
+```txt
+Title: <%= grunt.option('title') %>
+----
+Link: <%= grunt.option('link') %>
+----
+Date: <%= grunt.template.today('yyyy-mm-dd') %>
+----
+Author: kahlil-lechelt
+----
+Text:
+```
+
+Create the file by calling
+```bash
+grunt textfile --link="http://thisisalink.net" --title="This is a title"
+``` 
+
+#### Jekyll Post
+
+Gruntfile: 
+```js
+grunt.initConfig({
+  textfile: {
+    options: {
+      dest: '_posts'
+    },
+    article: {
+      options: {
+        template: 'jekyll-article.tpl',
+        urlFormat: 'DATE-SLUG.md'
+      }
+    }
+  },
+})
+```
+
+Template: 
+
+```txt
+---
+Title: <%= grunt.option('title') %>
+Date: <%= grunt.template.today('yyyy-mm-dd') %>
+Author: kahlil-lechelt
+---
+```
+
+Create the file by calling
+```bash
+grunt textfile --title="This is a title"
+``` 
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
