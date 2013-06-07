@@ -45,7 +45,6 @@ module.exports = function(grunt) {
     } else {
       template = grunt.file.read(filePath);
     }
-
     // Process the template file.
     result   = grunt.util.normalizelf(grunt.template.process(template));
     // Put together the full path to the file.
@@ -61,7 +60,5 @@ module.exports = function(grunt) {
             args: [fullPath]
         });
     }
-
   });
-
 };
