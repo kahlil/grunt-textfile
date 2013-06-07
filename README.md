@@ -101,12 +101,12 @@ This option lets you set the desired formatting of the filename. There are 3 key
 ```
 
 #### options.openFile
-Specify if you want the generated file to opened in an editor.
+Specify if you want the generated file to opened in an editor.  
 Type: `Boolean`  
 Default Value: 'false'
 
 #### options.openWith
-Specify which editor you want the generated file to be opened with.
+Specify which editor you want the generated file to be opened with.  
 Type: `String`  
 Default Value: 'subl'
 
