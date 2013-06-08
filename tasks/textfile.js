@@ -55,10 +55,10 @@ module.exports = function(grunt) {
     grunt.log.writeln('File "' + fullPath  + '" created.');
     // Open file in editor if desired.
     if(options.openFile) {
-        grunt.util.spawn({
-            cmd: options.openWith,
-            args: [fullPath]
-        });
+      grunt.util.spawn({
+        cmd: options.openWith,
+        args: [fullPath]
+      }, function(error, result, code) { grunt.log.error(error); });
     }
   });
 };
