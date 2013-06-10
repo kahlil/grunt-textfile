@@ -1,5 +1,7 @@
 # grunt-textfile
 
+![grunt-textfile](asepsisctl uninstall_wrapper)
+
 > A grunt task to quickly create text files for text file based blogging.
 
 ## Getting Started
