@@ -1,6 +1,6 @@
 # grunt-textfile
 
-![](http://tng.local/content/home/32-release-grunt-textfile/grunt-textfile.jpg)
+![grunt-textfile](http://tng.local/content/home/32-release-grunt-textfile/grunt-textfile.jpg)
 
 > A grunt task to quickly create text files for text file based blogging.
 
