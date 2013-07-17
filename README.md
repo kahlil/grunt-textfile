@@ -200,6 +200,6 @@ v0.1.7: add 'openFile' and 'openFile' options to open the generated file in an e
 v0.1.0: initial release.
 ```
 
-### Cool Badge
+## Cool Badge
 
 [![NPM](https://nodei.co/npm/grunt-textfile.png)](https://nodei.co/npm/grunt-textfile/)
