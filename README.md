@@ -202,4 +202,4 @@ v0.1.0: initial release.
 
 ### Cool Badge
 
-[![NPM](https://nodei.co/npm/<package>.png)](https://nodei.co/npm/<package>/)
+[![NPM](https://nodei.co/npm/grunt-textfile.png)](https://nodei.co/npm/grunt-textfile/)
