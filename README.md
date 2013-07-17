@@ -199,3 +199,7 @@ Only releases with bigger changes will be listed here. Not listed are minor rele
 v0.1.7: add 'openFile' and 'openFile' options to open the generated file in an editor.
 v0.1.0: initial release.
 ```
+
+### Cool Badge
+
+[![NPM](https://nodei.co/npm/<package>.png)](https://nodei.co/npm/<package>/)
