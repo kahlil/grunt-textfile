@@ -138,7 +138,10 @@ grunt.initConfig({
     linkpost: {
       options: {
         template: 'kirby-linkpost.tpl',
-        urlFormat: 'PREFIX-SLUG/article.link.txt'
+        urlFormat: 'PREFIX-SLUG/article.link.txt',
+        customVars: {
+          foo: 'bar'
+        }
       }
     }
   },
@@ -155,6 +158,8 @@ Link: <%= grunt.option('link') %>
 Date: <%= grunt.template.today('yyyy-mm-dd') %>
 ----
 Author: kahlil-lechelt
+----
+Foo: <%= foo %>
 ----
 Text:
 ```
