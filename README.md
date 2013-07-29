@@ -109,18 +109,18 @@ This option lets you set the desired formatting of the filename. There are 3 key
 ```
 
 #### options.openFile
-Specify if you want the generated file to opened in an editor.
-Type: `Boolean`
+Specify if you want the generated file to opened in an editor.  
+Type: `Boolean`  
 Default Value: `false`
 
 #### options.openWith
-Specify which editor you want the generated file to be opened with.
-Type: `String`
+Specify which editor you want the generated file to be opened with.  
+Type: `String`  
 Default Value: `subl`
 
 #### options.customVars
-Set some custom variables to use within your template.
-Type: `Object`
+Set some custom variables to use within your template.  
+Type: `Object`  
 No default value
 
 ### Usage Examples
