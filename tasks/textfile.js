@@ -13,7 +13,8 @@ module.exports = function(grunt) {
   var textfile = require('./lib/textfile').init(grunt);
 
   grunt.registerMultiTask('textfile', 'Create a new post for your text file based blogging software.', function() {
-    var options, template, filename, filePath, result, fullPath;
+    var options, template, filename, filePath, result, fullPath, processedTemplate;
+
     // Merge task-specific and/or target-specific options with these defaults.
     options = this.options({
       // Name of the default template.
@@ -46,7 +47,14 @@ module.exports = function(grunt) {
       template = grunt.file.read(filePath);
     }
     // Process the template file.
-    result   = grunt.util.normalizelf(grunt.template.process(template));
+    if (options.customVars) {
+      processedTemplate = grunt.template.process(template, {data: options.customVars});
+    }
+    else {
+      processedTemplate = grunt.template.process(template);
+    }
+
+    result   = grunt.util.normalizelf(processedTemplate);
     // Put together the full path to the file.
     fullPath = options.dest + '/' + filename;
     // Write the file to specified path.

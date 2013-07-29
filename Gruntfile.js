@@ -37,14 +37,19 @@ module.exports = function(grunt) {
       },
       linkpost: {
         options: {
-            // The name of the template
-            urlFormat: 'PREFIX-SLUG/article.link.txt'
+          // The name of the template
+          urlFormat: 'PREFIX-SLUG/article.link.txt',
+          customVars: {
+            foo: 'bar',
+            bar: 'baz',
+            baz: 'bla'
+          }
         }
       },
       article: {
         options: {
-            template: 'kirby-article.tpl',
-            urlFormat: 'PREFIX-SLUG/article.txt'
+          template: 'kirby-article.tpl',
+          urlFormat: 'PREFIX-SLUG/article.txt'
         }
       }
     },

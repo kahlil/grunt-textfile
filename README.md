@@ -34,7 +34,11 @@ grunt.initConfig({
     linkpost: {
       options: {
         template: 'kirby-linkpost.tpl',
-        urlFormat: 'PREFIX-SLUG/article.link.txt'
+        urlFormat: 'PREFIX-SLUG/article.link.txt',
+        customVars: {
+          foo: 'bar',
+          bar: 'baz'
+        }
       }
     },
     article: {
@@ -51,7 +55,7 @@ grunt.initConfig({
 
 Store your templates in the templates folder and use the [`grunt.template`](http://gruntjs.com/api/grunt.template) and the [`grunt.option`](http://gruntjs.com/api/grunt.option) API for placeholders.
 
-Example template: 
+Example template:
 
 ```
 Title: <%= grunt.option('title') %>
@@ -62,61 +66,68 @@ Date: <%= grunt.template.today('yyyy-mm-dd') %>
 ----
 Author: Jean-Luc Picard
 ----
+Foo: <%= foo %>
+----
 Text:
-``` 
+```
 
 ### Options
 
 #### options.template
 Type: `String`  
-Default value: `'example.tpl'`  
+Default value: `'example.tpl'`
 
 #### options.templateDir
 Type: `String`  
-Default value: `'templates'`  
+Default value: `'templates'`
 
 #### options.templateDir
 Destination for the generated file. Needs to be set to the folder in which your text files are stored.  
 Type: `String`  
-Default value: `'tmp'`  
+Default value: `'tmp'`
 
 #### options.urlDateFormat
 In case you need to use the date the name of the generated file, you can change the format with this option.  
 Type: `String`  
-Default value: `'yyyy-mm-dd'`  
+Default value: `'yyyy-mm-dd'`
 
 #### options.urlFormat
 Type: `String`  
-Default Value: 'PREFIX-SLUG/article.link.txt'  
+Default Value: 'PREFIX-SLUG/article.link.txt'
 
-This option lets you set the desired formatting of the filename. There are 3 keywords you can use in here: 
+This option lets you set the desired formatting of the filename. There are 3 keywords you can use in here:
 
 ```
-// PREFIX is needed for Kirby blogs. It prepends an ascending number to the folder name 
+// PREFIX is needed for Kirby blogs. It prepends an ascending number to the folder name
 // of the folder containing your textfile
-'PREFIX' 
+'PREFIX'
 // This keyword is replaced by the slug generated with the title
 'SLUG'
-// This keyword is replaced by the date of today 
+// This keyword is replaced by the date of today
 // formatted via options.urlDateFormat
 'DATE'
 ```
 
 #### options.openFile
-Specify if you want the generated file to opened in an editor.  
-Type: `Boolean`  
+Specify if you want the generated file to opened in an editor.
+Type: `Boolean`
 Default Value: `false`
 
 #### options.openWith
-Specify which editor you want the generated file to be opened with.  
-Type: `String`  
+Specify which editor you want the generated file to be opened with.
+Type: `String`
 Default Value: `subl`
+
+#### options.customVars
+Set some custom variables to use within your template.
+Type: `Object`
+No default value
 
 ### Usage Examples
 
 #### Kirby Link Post
 
-##### Gruntfile: 
+##### Gruntfile:
 ```js
 grunt.initConfig({
   textfile: {
@@ -134,7 +145,7 @@ grunt.initConfig({
 })
 ```
 
-##### Template: 
+##### Template:
 
 ```
 Title: <%= grunt.option('title') %>
@@ -151,11 +162,11 @@ Text:
 ##### Call:
 ```bash
 grunt textfile --link="http://thisisalink.net" --title="This is a title"
-``` 
+```
 
 #### Jekyll Post
 
-##### Gruntfile: 
+##### Gruntfile:
 ```js
 grunt.initConfig({
   textfile: {
@@ -173,7 +184,7 @@ grunt.initConfig({
 })
 ```
 
-##### Template: 
+##### Template:
 
 ```Handlebars
 ---
@@ -186,7 +197,7 @@ Author: kahlil-lechelt
 ##### Call:
 ```bash
 grunt textfile --title="This is a title"
-``` 
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
