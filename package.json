@@ -1,7 +1,7 @@
 {
   "name": "grunt-textfile",
   "description": "A grunt task to quickly create text files for text file based blogging.",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "homepage": "https://github.com/kahlil/grunt-textfile",
   "author": {
     "name": "Kahlil Lechelt",
