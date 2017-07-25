@@ -1,5 +1,7 @@
 # grunt-textfile
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kahlil/grunt-textfile.svg)](https://greenkeeper.io/)
+
 ![grunt-textfile](https://raw.github.com/kahlil/grunt-textfile/master/grunt-textfile.jpg)
 
 > A grunt task to quickly create text files for text file based blogging.
